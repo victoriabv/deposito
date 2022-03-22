@@ -23,10 +23,10 @@ public class CCuenta {
 
     /**
      * Constructor per defecte
-     * @param nom
-     * @param cue
-     * @param sal
-     * @param tipo 
+     * @param nom nom del titular
+     * @param cue numer del compte
+     * @param sal saldo del compte
+     * @param tipo tipus de compte
      */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         nombre = nom;

@@ -1,15 +1,33 @@
 package cuentas;
 
+/**
+ * @author vbinimelis
+ * @version 1.0
+ * Classe CCUenta
+ */
 public class CCuenta {
 
+    /**
+     * Atributs classe CCuenta
+     */
     private String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
+    /**
+     * Constructor sense atributs
+     */
     public CCuenta() {
     }
 
+    /**
+     * Constructor per defecte
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo 
+     */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         nombre = nom;
         cuenta = cue;
@@ -72,10 +90,22 @@ public class CCuenta {
         this.tipoInterés = tipoInterés;
     }
 
+    /**
+     * Mètode estado
+     * Retorna el saldo del compte
+     * @return getSaldo
+     * @see getSaldo
+     */
     public double estado() {
         return getSaldo();
     }
 
+    /**
+     * Mètode ingresar
+     * Ingresa una quantitat en el compte
+     * @param cantidad
+     * @throws Exception 
+     */
     public void ingresar(double cantidad) throws Exception {
         if (cantidad < 0) {
             throw new Exception("No se puede ingresar una cantidad negativa");
@@ -83,6 +113,12 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Mètode retirar
+     * Retira una quantiat del compte
+     * @param cantidad
+     * @throws Exception 
+     */
     public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0) {
             throw new Exception("No se puede retirar una cantidad negativa");
@@ -93,6 +129,15 @@ public class CCuenta {
         setSaldo(getSaldo() - cantidad);
     }
 
+    /**
+     * Retira una quantitat, ingresa una quantiat, d'un compte passar per paràmetre
+     * @param cant_retirar
+     * @param cant_ingresar
+     * @param cuenta1
+     * @param cantidad
+     * @see retirar
+     * @see ingresar
+     */
     public void operativa_cuenta(double cant_retirar, double cant_ingresar, CCuenta cuenta1, float cantidad) {
         try {
             cuenta1.retirar(cant_retirar);
